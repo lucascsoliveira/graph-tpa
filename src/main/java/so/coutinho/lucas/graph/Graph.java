@@ -133,4 +133,18 @@ public class Graph {
         return edges;
     }
 
+    private void validateUndirectedGraph() {
+        if (graphType.equals(UNDIRECTED)) {
+            int origin, target;
+
+            for (origin = 0; origin < getNumberOfVertices(); origin++) {
+                for (target = 0; target < getNumberOfVertices(); target++) {
+                    if (!adjacencyMatrix[origin][target].equals(adjacencyMatrix[target][origin])) {
+                        throw new RuntimeException("InvalidUndirectedGraph");
+                    }
+                }
+            }
+        }
+    }
+
 }
