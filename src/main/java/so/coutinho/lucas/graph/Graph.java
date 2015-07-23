@@ -133,6 +133,26 @@ public class Graph {
         return edges;
     }
 
+    public List<Edge> getEdges(Integer vertexId) {
+        List<Edge> edges = new ArrayList<>();
+
+        for (int target = 0; target < getNumberOfVertices(); target++) {
+            if (isAdjacent(vertexId, target)) {
+                edges.add(new Edge(getVertex(vertexId), getVertex(target), adjacencyMatrix[vertexId][target]));
+            }
+        }
+
+        return edges;
+    }
+
+    public List<Edge> getEdges(String vextexLabel) {
+        return getEdges(getVertex(vextexLabel));
+    }
+
+    public List<Edge> getEdges(Vertex vextex) {
+        return getEdges(vextex.getId());
+    }
+
     private void validateUndirectedGraph() {
         if (graphType.equals(UNDIRECTED)) {
             int origin, target;
