@@ -77,6 +77,12 @@ public class App {
             System.out.println(index++ + "\t" + vertex);
         }
 
+        index = 0;
+        System.out.println("PESOS");
+        for (Integer integer : dag.getWeight()) {
+            System.out.println(index++ + "\t" + integer);
+        }
+
     }
 
 }
