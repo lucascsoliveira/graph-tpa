@@ -1,6 +1,5 @@
 package so.coutinho.lucas.graph.methods.search;
 
-import com.sun.java.accessibility.util.EventID;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,10 +15,10 @@ import so.coutinho.lucas.graph.Vertex;
 @Getter
 @Setter
 public class DepthFirstSearch extends GraphSearch {
-    
+
     private Integer[][] time;
     private List<Vertex> topologicalSorting;
-    
+
     @Override
     public void walkingOnTheGraph(Graph graph) {
         initializeAtributes(graph.getNumberOfVertices());
@@ -29,10 +28,10 @@ public class DepthFirstSearch extends GraphSearch {
                 visitDFS(graph, index, time);
             }
         }
-        
+
         Collections.reverse(topologicalSorting);
     }
-    
+
     private int visitDFS(Graph graph, int index, int time) {
         List<Integer> indexAdjacents = new ArrayList();
         super.getColor()[index] = 'C';
@@ -63,20 +62,20 @@ public class DepthFirstSearch extends GraphSearch {
                 time = visitDFS(graph, indexAdj, ++time);
             }
         }
-        
+
         super.getColor()[index] = 'P';
         this.time[index][1] = ++time;
         topologicalSorting.add(graph.getVertex(index));
-        
+
         return time;
     }
-    
+
     @Override
     protected void initializeAtributes(Integer numberOfVertices) {
         super.initializeAtributes(numberOfVertices);
-        
+
         time = new Integer[numberOfVertices][2];
         topologicalSorting = new ArrayList<>();
     }
-    
+
 }
