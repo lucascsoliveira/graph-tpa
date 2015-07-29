@@ -3,10 +3,6 @@ package so.coutinho.lucas.graph;
 import java.io.File;
 import java.io.FileNotFoundException;
 import so.coutinho.lucas.graph.methods.minimumspanningtree.PrimJarnik;
-import so.coutinho.lucas.graph.methods.search.BreadthFirstSearch;
-import so.coutinho.lucas.graph.methods.search.DepthFirstSearch;
-import so.coutinho.lucas.graph.methods.shortestpath.BellmanFord;
-import so.coutinho.lucas.graph.methods.shortestpath.DirectedAcyclicGraph;
 
 /**
  *
@@ -18,7 +14,9 @@ public class App {
 //        Graph graph = Graph.buildFromFile(new File("src/main/resources/input.txt"));
 //        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt1_10v.txt"));
 //        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt2_5v.txt"));
-        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt3_10vA.txt"));
+//        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt3_10vA.txt"));
+//        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt4_8v.txt"));
+        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt5_5v.txt"));
         Integer index;
 
 //        BreadthFirstSearch bfs = new BreadthFirstSearch();
