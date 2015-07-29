@@ -17,7 +17,8 @@ public class PrimJarnik extends MinimumSpanningTree {
         List<Vertex> Q = graph.getVertices();
 
         while (!Q.isEmpty()) {
-            Vertex u = Q.remove(0);
+            Vertex u = getLowerCost(Q);
+            Q.remove(u);
 
             for (Vertex v : graph.getAdjacents(u)) {
                 Integer costEdge = graph.getAdjacencyMatrix()[u.getId()][v.getId()];
@@ -30,4 +31,20 @@ public class PrimJarnik extends MinimumSpanningTree {
         }
     }
 
+    private Vertex getLowerCost(List<Vertex> vertices) {
+        if (!vertices.isEmpty()) {
+            Vertex lowerVertex = vertices.get(0);
+            Integer lowerCost = super.getCost()[lowerVertex.getId()];
+
+            for (Vertex vertex : vertices) {
+                if (super.getCost()[vertex.getId()] < lowerCost) {
+                    lowerVertex = vertex;
+                    lowerCost = super.getCost()[vertex.getId()];
+                }
+            }
+
+            return lowerVertex;
+        }
+        throw new RuntimeException("VertexNotFoundException");
+    }
 }
