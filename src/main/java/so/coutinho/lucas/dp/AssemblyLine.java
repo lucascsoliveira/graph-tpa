@@ -125,7 +125,7 @@ public class AssemblyLine {
         }
 
         System.out.printf("\n");
-        System.out.printf("F* = %d\n", assemblyLine.getL());
+        System.out.printf("L* = %d\n", assemblyLine.getL());
     }
 
 }
