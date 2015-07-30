@@ -11,12 +11,12 @@ import so.coutinho.lucas.graph.methods.minimumspanningtree.PrimJarnik;
 public class App {
 
     public static void main(String[] args) throws FileNotFoundException {
-//        Graph graph = Graph.buildFromFile(new File("src/main/resources/input.txt"));
-//        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt1_10v.txt"));
+        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt1_10v.txt"));
 //        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt2_5v.txt"));
 //        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt3_10vA.txt"));
 //        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt4_8v.txt"));
-        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt5_5v.txt"));
+//        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt5_5v.txt"));
+//        Graph graph = Graph.buildFromFile(new File("src/main/resources/gt6_6v.txt"));
         Integer index;
 
 //        BreadthFirstSearch bfs = new BreadthFirstSearch();
